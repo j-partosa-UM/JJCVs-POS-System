@@ -53,6 +53,31 @@ The application uses SQLite database files included with the project. Keep
 these files in their expected locations so existing data and application
 resources can be found.
 
+## Accessing the application
+
+1. Launch the Windows executable or run the JAR.
+2. On the login screen, enter one of the accounts from the bundled demo
+   database.
+3. Select **Login**.
+4. Admin accounts open the administration page. User accounts open the
+   point-of-sale page.
+
+### Bundled demo accounts
+
+| Username | Password | Role |
+| --- | --- | --- |
+| `newAccount` | `admin` | Admin |
+| `newAccount1` | `admin` | User |
+| `Emp1` | `user` | User |
+| `Emp2` | `user` | User |
+| `Jorg` | `user` | User |
+
+These credentials are stored in plain text in the included SQLite database and
+are provided only for demonstrating the application. Change or remove these
+accounts before using the application with real business data or publishing
+the repository publicly. An administrator can create additional accounts using
+the registration page.
+
 ## Project structure
 
 - `src` - Java source code, application resources, and SQLite database
