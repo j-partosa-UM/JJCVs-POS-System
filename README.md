@@ -1,13 +1,14 @@
 # JJCVs POS System
 
-JJCVs POS System is a Java-based point-of-sale and store management application
-for managing products, inventory, stock movements, user accounts, store status,
-and customer transactions. The project includes the Java source code, required
-libraries, application resources, and a prebuilt Windows executable.
+JJCVs POS System is a Java desktop point-of-sale and store management
+application. It supports user accounts, product and inventory management,
+stock movements, store status, sales transactions, receipt generation, and
+SQLite data storage.
 
 ## Features
 
-- User registration and login
+- Admin and employee login
+- User registration
 - Product and inventory management
 - Stock-in and stock-out tracking
 - Point-of-sale transaction processing
@@ -15,68 +16,71 @@ libraries, application resources, and a prebuilt Windows executable.
 - Receipt generation
 - SQLite database storage
 
-## Installation
+## Quick start on Windows
 
-### Windows executable
+### Using the executable
 
 1. Download or clone this repository.
-2. Keep the project folder structure intact, including `lib`, `src`, and the
-   application resources.
-3. Double-click `JJCV's System.exe` to launch the application.
+2. Keep the project folder structure intact.
+3. Double-click `JJCV's System.exe`.
+4. If Windows shows a security warning, select **More info**, then **Run
+   anyway** only if you trust the copy you downloaded.
 
-If Windows displays a security warning, select **More info**, then **Run
-anyway** only if you trust the copy you downloaded.
-
-### Java JAR
+### Using the Java JAR
 
 1. Install Java Runtime Environment (JRE) 8 or later.
-2. Download or clone this repository.
-3. Open a terminal in the project folder.
-4. Run:
+2. Open PowerShell in the project folder.
+3. Run:
 
    ```powershell
    java -jar "JJCV's System v2.0.jar"
    ```
 
-### Build from source
+## Demo login credentials
+
+The bundled demo database contains two accounts:
+
+**Admin account**
+
+```text
+Username: admin
+Password: admin
+```
+
+This account opens the administration page, where inventory, users, and other
+store functions can be managed.
+
+**POS user account**
+
+```text
+Username: user
+Password: user
+```
+
+This account opens the point-of-sale page for processing transactions.
+
+To log in, launch the application, enter the appropriate username and
+password, and select **LOGIN**. These are demonstration credentials only.
+Passwords are currently stored as plain text in SQLite, so do not use this
+authentication design for real business or production data without improving
+password storage and account security.
+
+An administrator can create additional accounts from the registration page.
+
+## Build from source
 
 1. Install JDK 8 or later and Visual Studio Code with the Extension Pack for
    Java, or use another Java IDE.
 2. Open the project folder.
-3. Ensure the dependencies in `lib` are available to the project:
+3. Add the dependencies in `lib` to the project classpath:
    `jcalendar-1.4.jar` and `sqlitejdbc-v056.jar`.
 4. Compile the Java files in `src` to the `bin` directory.
 5. Run the `Main` class with `bin` and the JAR files in `lib` on the
    classpath.
 
-The application uses SQLite database files included with the project. Keep
-these files in their expected locations so existing data and application
-resources can be found.
-
-## Accessing the application
-
-1. Launch the Windows executable or run the JAR.
-2. On the login screen, enter one of the accounts from the bundled demo
-   database.
-3. Select **Login**.
-4. Admin accounts open the administration page. User accounts open the
-   point-of-sale page.
-
-### Bundled demo accounts
-
-| Username | Password | Role |
-| --- | --- | --- |
-| `newAccount` | `admin` | Admin |
-| `newAccount1` | `admin` | User |
-| `Emp1` | `user` | User |
-| `Emp2` | `user` | User |
-| `Jorg` | `user` | User |
-
-These credentials are stored in plain text in the included SQLite database and
-are provided only for demonstrating the application. Change or remove these
-accounts before using the application with real business data or publishing
-the repository publicly. An administrator can create additional accounts using
-the registration page.
+The application expects the SQLite database and image resources in their
+existing project locations. Keep the folder structure intact when moving or
+running the application.
 
 ## Project structure
 
